@@ -3,6 +3,7 @@ const colors = require('colors')
 const cors = require('cors')
 const morgan = require('morgan')
 const dotenv = require("dotenv")
+const cookieParser = require('cookie-parser')
 //Rest object
 const app = express();
  
@@ -13,6 +14,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(morgan('dev'));
 dotenv.config();
 const dbConnect = require('./config/db_connection')
+app.use(cookieParser())
 
 //db connection
 dbConnect();
@@ -22,9 +24,11 @@ dbConnect();
 
 const testRouter = require('./routes/testRouter')
 const authRouter = require('./routes/authRouter')
+const userRouter = require('./routes/userRoute')
 
 app.use('/api/v1/test',testRouter)
 app.use('/api/v1/user',authRouter)
+app.use('/api/v1/user',userRouter)
 
 
 app.get('/',(req,res)=>{  
