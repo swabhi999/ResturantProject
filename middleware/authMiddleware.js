@@ -6,7 +6,7 @@ const userModel = require("../models/userModel");
 module.exports.authMiddelware = async (req,res,next)=>{
     try {
      if(!req.cookies.token){
-        res.status(4001).send("You have to login first !")
+        res.status(401).send("You have to login first !")
      }
 
      const decoded = jwt.verify(req.cookies.token,process.env.SECRET_KEY)

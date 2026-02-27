@@ -80,14 +80,7 @@ const loginUserController = async (req, res) => {
         message: "Invalid password !",
       });
     }
-    // checking password
-    // if (user.password !== password) {
-    //   return res.status(400).send({
-    //     success: false,
-    //     message: "Invalid password !",
-    //   });
-    // }
-
+    
     // token generate
     const token = generateToken(user._id);
 
