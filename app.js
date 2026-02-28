@@ -26,11 +26,13 @@ const testRouter = require('./routes/testRouter')
 const authRouter = require('./routes/authRouter')
 const userRouter = require('./routes/userRoute')
 const restaurantRouter = require("./routes/resturantRoute")
+const categoryRouter = require("./routes/categoryRouter")
 
 app.use('/api/v1/test',testRouter)
 app.use('/api/v1/user',authRouter)
 app.use('/api/v1/user',userRouter)
 app.use('/api/v1/restaurant',restaurantRouter)
+app.use('/api/v1/category',categoryRouter)
 
 
 app.get('/',(req,res)=>{  

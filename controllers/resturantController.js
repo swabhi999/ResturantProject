@@ -73,6 +73,11 @@ const getAllRestaurantControlller = async (req, res) => {
     });
   }
 };
+
+
+
+//GET RESTAURANT
+
 const getRestaurantById = async (req, res) => {
   try {
     const restaurantId = req.params.id;
@@ -93,6 +98,9 @@ const getRestaurantById = async (req, res) => {
     });
   }
 };
+
+//DELETE RESTAURANT
+
 const deleteRestaurantController = async (req, res) => {
   try {
     const restaurantId = req.params.id;
